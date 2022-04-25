@@ -44,8 +44,7 @@ namespace BaseSolution.Project.Presentation.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("delete")]
+        [HttpGet("delete")]
         public void Delete(int Id)
         {
             carService.Delete(new Car { Id = Id });

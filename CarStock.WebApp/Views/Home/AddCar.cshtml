@@ -1,0 +1,49 @@
+﻿@model Car
+@{
+	ViewData["Car"] = "Add Car";
+	ViewData["AddCarList"] = "Add Car List";
+}
+<h1>@ViewData["AddCarList"]</h1>
+<br/>
+
+<div>
+	<form asp-controller="Home" asp-action="AddCar">
+		@Html.HiddenFor(model => model.Id)
+		<div class="form-group">
+			@Html.LabelFor(model => model.MotorNo, new { @class = "sr-only", @for = "MotorNo" })
+			@Html.TextBoxFor(model => model.MotorNo, new { @class = "form-control", @placeholder = "MotorNo:" , @id="MotorNo" })
+			@Html.ValidationMessageFor(model => model.MotorNo)
+			</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Marka, new { @class = "sr-only", @for = "Marka" })
+			@Html.TextBoxFor(model => model.Marka, new { @class = "form-control", @placeholder = "Marka" , @id="Marka" })
+			@Html.ValidationMessageFor(model => model.Marka)
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Model, new { @class = "sr-only", @for = "Model" })
+			@Html.TextBoxFor(model => model.Model, new { @class = "form-control", @placeholder = "Model" , @id="Model" })
+			@Html.ValidationMessageFor(model => model.Model)
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Renk, new { @class = "sr-only", @for = "Renk" })
+			@Html.TextBoxFor(model => model.Renk, new { @class = "form-control", @placeholder = "Renk" , @id="Renk" })
+			@Html.ValidationMessageFor(model => model.Renk)
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Plaka, new { @class = "sr-only", @for = "Plaka" })
+			@Html.TextBoxFor(model => model.Plaka, new { @class = "form-control", @placeholder = "Plaka" , @id="Plaka" })
+			@Html.ValidationMessageFor(model => model.Plaka)
+		</div>
+
+		<br />
+		<div>
+			<button type="submit" class="btn btn-primary">Add</button>
+		</div>
+
+	</form>
+</div>
+<br />

@@ -1,8 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Car>
+@{
+	ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h1 class="display-4">Araç Listesi</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Marka</th>
+				<th scope="col">Model</th>
+				<th scope="col">Renk</th>
+				<th scope="col">Plaka</th>
+				<th scope="col">MotorNo</th>
+				<th scope="col"></th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<th scope="row">@item.Id</th>
+					<td>@item.Marka</td>
+					<td>@item.Model</td>
+					<td>@item.Renk</td>
+					<td>@item.Plaka</td>
+					<td>@item.MotorNo</td>
+					<td><a href="home/addcar?id=@item.Id">Edit</a></td>
+					<td><a href="home/deletecar?id=@item.Id">Delete</a></td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
 </div>
